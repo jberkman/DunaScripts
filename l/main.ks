@@ -2,6 +2,7 @@
 parameter lib.
 local mainMenu is use("/l/mainMenu.ks").
 lib:add({
-	if status = "PRELAUNCH" or ship:modulesNamed("kOSProcessor"):length = 1 mainMenu().
-	else print "Type 'run l/mainMenu' to load main menu.".
+	parameter force is false.
+	if force or status = "PRELAUNCH" or ship:modulesNamed("kOSProcessor"):length = 1 mainMenu().
+	print "Type 'runPath(''boot/init'', true).' to load main menu.".
 }).
