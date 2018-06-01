@@ -1,7 +1,7 @@
 @lazyglobal off.
 parameter lib.
 lib:add({
-	local done is false.
+	local done is 0.
 	local win is GUI(320).
 
 	local stk is win:addStack().
@@ -11,9 +11,10 @@ lib:add({
 
 	local mnu is stk:addVLayout().
 	local bar is mnu:addHLayout().
-	local btn is bar:addButton("X").
-	set btn:onClick to{set done to true.}.
-	set btn:style:hStretch to false.
+	local btn is bar:addButton(" X ").
+	set btn:onClick to{set done to 1.}.
+	set btn:style:hStretch to 0.
+	bar:addSpacing(5).
 	bar:addLabel("Main Menu").
 	mnu:addSpacing(5).
 
