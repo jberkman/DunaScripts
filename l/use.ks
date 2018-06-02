@@ -6,6 +6,7 @@ lib:add({
 	if not cache:hasKey(p){
 		if not exists(p)copyPath("0:"+p,p).
 		local lib is List().
+        print(". "+p).
 		runPath(p,lib).
 		set cache[p]to lib[0].
 	}

@@ -2,11 +2,9 @@
 parameter lib.
 local rdObt is use("/l/readOrbit.ks").
 local wrObt2 is use("/l/writeOrbit2.ks").
-lib:add({
-	parameter stk,prv.
-
+lib:add({parameter stk,prv.
+	print"$ orbitMenu.ks".
 	local o is rdObt().
-
 	local mnu is stk:addVLayout().
 	local bar is mnu:addHLayout().
 	local btn is bar:addButton(" < ").

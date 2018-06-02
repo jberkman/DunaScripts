@@ -1,7 +1,9 @@
 @lazyglobal off.
 parameter lib.
 lib:add({
+	print"$ mainMenu.ks".
 	local done is 0.
+	local exec is 0.
 	local win is GUI(320).
 
 	local stk is win:addStack().
@@ -19,10 +21,17 @@ lib:add({
 	mnu:addSpacing(5).
 
 	set mnu:addButton("Orbital Parameters"):onClick to{use("/l/orbitMenu.ks")(stk,mnu).}.
+	set mnu:addButton("Execute Manouvre"):onClick to{set exec to 1.}.
 	set mnu:addButton("Stage"):onClick to{stage.}.
-	set mnu:addButton("Reboot"):onClick to{win:dispose().reboot.}.
+	set mnu:addButton("Reboot"):onClick to{win:hide().reboot.}.
 
 	win:show().
-	wait until done.
+	until done{
+		wait until exec or done.
+		if exec{
+			set exec to 0.
+			use("/l/execNode.ks")().
+		}
+	}
 	win:dispose().
 }).

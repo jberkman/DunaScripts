@@ -1,6 +1,6 @@
 @lazyglobal off.
 parameter lib.
-lib:add({
-    parameter o.
-    writeJSON(o,"/orbit.js").
+lib:add({parameter o.
+	print "$ writeOrbit.ks".
+	writeJSON(o,"/orbit.js").
 }).
