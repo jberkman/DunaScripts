@@ -1,10 +1,8 @@
 @lazyglobal off.
 parameter lib.
-local rdObt is use("/l/readOrbit.ks").
-local wrObt2 is use("/l/writeOrbit2.ks").
 lib:add({parameter stk,prv.
 	print"$ orbitMenu.ks".
-	local o is rdObt().
+	local o is use("/l/readOrbit.ks")().
 	local mnu is stk:addVLayout().
 	local bar is mnu:addHLayout().
 	local btn is bar:addButton(" < ").
@@ -42,7 +40,7 @@ lib:add({parameter stk,prv.
 	local lan is addField("Long. of A.N.",o["lan"]).
 
 	function wrObt{
-		wrObt2(par:value,apo:text:toScalar(0),per:text:toScalar(0),inc:text:toScalar(0),aop:text:toScalar(0),lan:text:toScalar(0)).
+		use("/l/writeOrbit2.ks")(par:value,apo:text:toScalar(0),per:text:toScalar(0),inc:text:toScalar(0),aop:text:toScalar(0),lan:text:toScalar(0)).
 	}
 
 	mnu:addSpacing(10).

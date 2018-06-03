@@ -30,7 +30,7 @@ lib:add({parameter stk,prv.
     set mnu:addButton("Capture Burn"):onClick to{set choice to 11.}.
 
     stk:showOnly(mnu).
-    until choice>1{
+    until choice<0{
         set choice to 0.
         wait until choice.
         if choice=1 use("/l/orbitMenu.ks")(stk,mnu).
@@ -39,7 +39,7 @@ lib:add({parameter stk,prv.
         else if choice=4 use("/l/fineTuneSMA.ks")().
         else if choice=5 use("/l/changeInc.ks")().
         else if choice=6 use("/l/changeAOP.ks")().
-        else if choice=7 use("/l/hohmann.ks")().
+        else if choice=7 use("/l/hohmannXfer.ks")().
         else if choice=8 use("/l/xferCorrection.ks")().
         else if choice=9 use("/l/midCourseCorrection.ks")().
         else if choice=10 use("/l/captureCorrection.ks")().
