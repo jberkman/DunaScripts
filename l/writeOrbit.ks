@@ -2,5 +2,5 @@
 parameter lib.
 lib:add({parameter o.
 	print "$ writeOrbit.ks".
-	writeJSON(o,"/orbit.js").
+	writeJSON(o,"/orbit.json").
 }).
