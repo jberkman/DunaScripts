@@ -39,6 +39,7 @@ lib:add({parameter stk,prv,w is 0.
 		set lbl:text to"Performing Burn.".
 		lock throttle to max(min(1,bt()),0.2).
 		wait until cnl or vDot(dv,nextNode:deltaV)<=0.
+		break.
 	}
 	lock throttle to 0.
 	set ship:control:pilotMainThrottle to 0.

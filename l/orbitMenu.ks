@@ -42,8 +42,11 @@ lib:add({parameter stk,prv.
 	local lan is addField("Long. of A.N.",o["lan"]).
 
 	function wrObt{
-		wrObt2(par:value,apo:text:toScalar(0)+par:value:radius,per:text:toScalar(0)+par:value:radius,inc:text:toScalar(0),aop:text:toScalar(0),lan:text:toScalar(0)).
+		wrObt2(par:value,apo:text:toScalar(0),per:text:toScalar(0),inc:text:toScalar(0),aop:text:toScalar(0),lan:text:toScalar(0)).
 	}
+
+	mnu:addSpacing(10).
+	set mnu:addButton("Save"):onClick to wrObt@.
 
 	mnu:addSpacing(10).
 	set mnu:addButton("Reset to Current"):onClick to{
@@ -79,8 +82,6 @@ lib:add({parameter stk,prv.
 		}
 		switch to core:volume.
 	}.
-	mnu:addSpacing(10).
-	set mnu:addButton("Save"):onClick to wrObt@.
 
 	stk:showOnly(mnu).
 }).

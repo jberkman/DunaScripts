@@ -2,5 +2,7 @@
 parameter lib.
 lib:add({parameter o.
 	print "$ writeOrbit.ks".
-	writeJSON(o,"/orbit.json").
+    local tmp is o:copy.
+    set tmp["body"]to tmp["body"]:name.
+	writeJSON(tmp,"/orbit.json").
 }).
