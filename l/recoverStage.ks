@@ -7,6 +7,7 @@ lib:add({parameter stk,prv.
 	local execNode is use("/l/execNode.ks").
 	local hoverSlam is use("/l/hoverSlam.ks").
 	wait until ship:modulesNamed("kOSProcessor"):length=1.
+	wait 5.
 	boostback(l["lat"],l["lng"]).
 	execNode(stk,prv).
 	hoverSlam(l["lat"],l["lng"]).

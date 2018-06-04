@@ -1,7 +1,7 @@
 @lazyglobal off.
 parameter lib.
 lib:add({parameter stk,prv.
-    print"$ planNode.ks".
+    print"$ manouvreMenu.ks".
     local choice is 0.
     local mnu is stk:addVLayout().
     local bar is mnu:addHLayout().

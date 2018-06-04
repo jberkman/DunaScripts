@@ -43,7 +43,7 @@ lib:add({
 		set choice to 0.
 		wait until choice.
         if choice=10 use("/l/orbitMenu.ks")(stk,mnu).
-		else if choice=20 use("/l/planNode.ks")(stk,mnu).
+		else if choice=20 use("/l/manouvreMenu.ks")(stk,mnu).
 		else if choice=30 use("/l/execNode.ks")(stk,mnu,wrp).
 		else if choice=40 use("/l/launchMenu.ks")(stk,mnu).
 		else if choice=50 use("/l/warpToLAN.ks")().
