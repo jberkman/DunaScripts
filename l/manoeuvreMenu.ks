@@ -10,22 +10,22 @@ lib:add({parameter stk,prv.
     set btn:style:hStretch to 0.
     bar:addSpacing(10).
     bar:addLabel("Plan Manouvre").
-
     mnu:addSpacing(10).
+
     set mnu:addButton("Change Apoapsis"):onClick to{set choice to 10.}.
     set mnu:addButton("Change Periapsis"):onClick to{set choice to 20.}.
     set mnu:addButton("Fine-Tune Semi-Major Axis"):onClick to{set choice to 30.}.
 
-    mnu:addSpacing(10).
+    mnu:addSpacing(20).
     set mnu:addButton("Change Inclination"):onClick to{set choice to 40.}.
     set mnu:addButton("Change Arg. of Periapsis"):onClick to{set choice to 50.}.
 
-    mnu:addSpacing(10).
+    mnu:addSpacing(20).
     set mnu:addButton("Hohmann Transfer"):onClick to{set choice to 60.}.
     set mnu:addButton("Transfer Correction"):onClick to{set choice to 70.}.
     set mnu:addButton("Mid-Course Correction"):onClick to{set choice to 80.}.
 
-    mnu:addSpacing(10).
+    mnu:addSpacing(20).
     set mnu:addButton("Capture Correction"):onClick to{set choice to 90.}.
     set mnu:addButton("Capture Burn"):onClick to{set choice to 100.}.
 
