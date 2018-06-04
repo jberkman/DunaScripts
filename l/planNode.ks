@@ -10,40 +10,39 @@ lib:add({parameter stk,prv.
     set btn:style:hStretch to 0.
     bar:addSpacing(10).
     bar:addLabel("Plan Manouvre").
-    mnu:addSpacing(10).
 
-    set mnu:addButton("Orbital Parameters"):onClick to{set choice to 1.}.
     mnu:addSpacing(10).
-    set mnu:addButton("Change Apoapsis"):onClick to{set choice to 2.}.
-    set mnu:addButton("Change Periapsis"):onClick to{set choice to 3.}.
+    set mnu:addButton("Change Apoapsis"):onClick to{set choice to 10.}.
+    set mnu:addButton("Change Periapsis"):onClick to{set choice to 20.}.
+    set mnu:addButton("Fine-Tune Semi-Major Axis"):onClick to{set choice to 30.}.
+
     mnu:addSpacing(10).
-    set mnu:addButton("Fine-Tune Semi-Major Axis"):onClick to{set choice to 4.}.
+    set mnu:addButton("Change Inclination"):onClick to{set choice to 40.}.
+    set mnu:addButton("Change Arg. of Periapsis"):onClick to{set choice to 50.}.
+
     mnu:addSpacing(10).
-    set mnu:addButton("Change Inclination"):onClick to{set choice to 5.}.
-    set mnu:addButton("Change Arg. of Periapsis"):onClick to{set choice to 6.}.
+    set mnu:addButton("Hohmann Transfer"):onClick to{set choice to 60.}.
+    set mnu:addButton("Transfer Correction"):onClick to{set choice to 70.}.
+    set mnu:addButton("Mid-Course Correction"):onClick to{set choice to 80.}.
+
     mnu:addSpacing(10).
-    set mnu:addButton("Hohmann Transfer"):onClick to{set choice to 7.}.
-    set mnu:addButton("Transfer Correction"):onClick to{set choice to 8.}.
-    set mnu:addButton("Mid-Course Correction"):onClick to{set choice to 9.}.
-    mnu:addSpacing(10).
-    set mnu:addButton("Capture Correction"):onClick to{set choice to 10.}.
-    set mnu:addButton("Capture Burn"):onClick to{set choice to 11.}.
+    set mnu:addButton("Capture Correction"):onClick to{set choice to 90.}.
+    set mnu:addButton("Capture Burn"):onClick to{set choice to 100.}.
 
     stk:showOnly(mnu).
     until choice<0{
         set choice to 0.
         wait until choice.
-        if choice=1 use("/l/orbitMenu.ks")(stk,mnu).
-        else if choice=2 use("/l/changeApo.ks")().
-        else if choice=3 use("/l/changePeri.ks")().
-        else if choice=4 use("/l/fineTuneSMA.ks")().
-        else if choice=5 use("/l/changeInc.ks")().
-        else if choice=6 use("/l/changeAOP.ks")().
-        else if choice=7 use("/l/hohmannXfer.ks")().
-        else if choice=8 use("/l/xferCorrection.ks")().
-        else if choice=9 use("/l/midCourseCorrection.ks")().
-        else if choice=10 use("/l/captureCorrection.ks")().
-        else if choice=11 use("/l/captureBurn.ks")().
+        else if choice=10 use("/l/changeApo.ks")().
+        else if choice=20 use("/l/changePeri.ks")().
+        else if choice=30 use("/l/fineTuneSMA.ks")().
+        else if choice=40 use("/l/changeInc.ks")().
+        else if choice=50 use("/l/changeAOP.ks")().
+        else if choice=60 use("/l/hohmannXfer.ks")().
+        else if choice=70 use("/l/xferCorrection.ks")().
+        else if choice=80 use("/l/midCourseCorrection.ks")().
+        else if choice=90 use("/l/captureCorrection.ks")().
+        else if choice=100 use("/l/captureBurn.ks")().
     }
     stk:showOnly(prv).
     mnu:dispose().

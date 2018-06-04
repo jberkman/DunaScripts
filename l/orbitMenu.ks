@@ -43,10 +43,9 @@ lib:add({parameter stk,prv.
 		use("/l/writeOrbit2.ks")(par:value,apo:text:toScalar(0),per:text:toScalar(0),inc:text:toScalar(0),aop:text:toScalar(0),lan:text:toScalar(0)).
 	}
 
-	mnu:addSpacing(10).
 	set mnu:addButton("Save"):onClick to wrObt@.
 
-	mnu:addSpacing(10).
+	mnu:addSpacing(20).
 	set mnu:addButton("Reset to Current"):onClick to{
 		set par:value to body.
 		set apo:text to""+obt:apoapsis.
@@ -59,9 +58,10 @@ lib:add({parameter stk,prv.
 		set apo:text to""+(par:value:atm:height+10_000).
 		set per:text to apo:text.
 	}.
-    set mnu:addButton("Circularize (Apo)"):onClick to{set per:text to apo:text.}.
-    set mnu:addButton("Circularize (Peri)"):onClick to{set apo:text to per:text.}.
-	mnu:addSpacing(10).
+    set mnu:addButton("Circularize to Apoapsis"):onClick to{set per:text to apo:text.}.
+    set mnu:addButton("Circularize to Periapsis"):onClick to{set apo:text to per:text.}.
+
+	mnu:addSpacing(20).
 	set mnu:addButton("Copy From Target"):onClick to{
 		if not hasTarget return.
 		set par:value to target:body.
